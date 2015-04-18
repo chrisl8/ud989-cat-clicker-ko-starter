@@ -1,7 +1,4 @@
-var ViewModel = function() {
-    // Putting Model in ViewModel for simplicty
-    // in this example,
-    // but it is still FUNCTIONALLY separate
+var Cat = function() {
     this.clickCount = ko.observable(0);
     this.level = ko.computed(function() {
         if (this.clickCount() > 10) {
@@ -22,8 +19,14 @@ var ViewModel = function() {
             /* Use "text: $data" if it is an array,
             and not an object. */
 
+};
+
+var ViewModel = function() {
+
+    this.currentCat = ko.observable( new Cat() );
+
     this.incrementCounter = function() {
-        this.clickCount(this.clickCount() + 1);
+        this.currentCat().clickCount(this.currentCat().clickCount() + 1);
     };
 };
 
