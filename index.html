@@ -16,9 +16,7 @@
         <img src="" alt="cute cat" data-bind="click: $parent.incrementCounter, attr: {src: imgSrc}">
         <h2>Nicknames:</h2>
         <ul data-bind="foreach: nickNames">
-            <li data-bind="text: name"></li>
-            <!-- Use "text: currentCat().$data" if it is an array,
-            and not an object. -->
+            <li data-bind="text: $data"></li>
         </ul>
 
     </div>
